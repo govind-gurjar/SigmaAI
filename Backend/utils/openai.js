@@ -1,0 +1,25 @@
+import "dotenv/config";
+import { GoogleGenAI } from "@google/genai";
+
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
+});
+
+const getOpenAIAPIResponse = async (chatHistory) => {
+  try {
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: chatHistory.map((msg) => ({
+        role: msg.role === "assistant" ? "model" : "user",
+        parts: [{ text: msg.content }],
+      })),
+    });
+
+    return response.text;
+  } catch (err) {
+    console.error("Gemini Error:", err);
+    throw err;
+  }
+};
+
+export default getOpenAIAPIResponse;

@@ -1,0 +1,57 @@
+:root {
+    --bg-color: #212121;
+    --text-color: #ececec;
+
+    --sidebar-bg: #171717;
+    --hover-bg: rgba(180, 180, 180, 0.05);
+    --border-color: rgba(255,255,255,0.5);
+}
+
+.app.light {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+
+    --sidebar-bg: #f3f3f3;
+    --hover-bg: rgba(0,0,0,0.08);
+    --border-color: rgba(0,0,0,0.2);
+    --input-bg: #f1f1f1;
+--dropdown-bg: #ffffff;
+}
+
+.app.dark {
+    --bg-color: #212121;
+    --text-color: #ececec;
+
+    --sidebar-bg: #171717;
+    --hover-bg: rgba(180,180,180,0.05);
+    --border-color: rgba(255,255,255,0.5);
+    --input-bg: rgba(255,255,255,0.05);
+--dropdown-bg: #323232;
+}
+
+* {
+    /*color: #ececec;*/
+    color: var(--text-color);
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+     transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+   /* background-color: #212121;*/
+    background-color: var(--bg-color);
+    display: flex;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+
+    .app {
+        flex-direction: column;
+    }
+
+}
